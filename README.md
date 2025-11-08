@@ -67,7 +67,7 @@ Remova entradas duplicadas em sistemas de monitoramento.
 
 ## 🔧 Função Principal
 
-A função核心 do desafio é `processPoem()`, que realiza todo o processamento do texto:
+A função do desafio é `processPoem()`, que realiza todo o processamento do texto:
 
 ```javascript
 function processPoem(poemText) {
