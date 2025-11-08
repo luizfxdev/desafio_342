@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sussurros no Silêncio Azul 🌌🌹</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Lato:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Vídeo de Background -->
+    <video id="bg-video" autoplay muted loop playsinline>
+      <source src="assets/background.mp4" type="video/mp4" />
+    </video>
+
+    <!-- Áudio de Fundo -->
+    <audio id="bg-audio" loop>
+      <source src="assets/theme.mp3" type="audio/mpeg" />
+    </audio>
+
+    <!-- Controles de Áudio -->
+    <div class="audio-controls">
+      <button id="play-audio" class="audio-btn" title="Tocar música">🎵</button>
+      <button id="pause-audio" class="audio-btn" title="Pausar música">⏸️</button>
+    </div>
+
+    <!-- Container Principal -->
+    <div class="main-container">
+      <!-- Descrição do Desafio -->
+      <div class="challenge-description">
+        <h1>Sussurros no Silêncio Azul</h1>
+        <p>
+          Em um mundo onde o silêncio é preenchido apenas pelo sutil brilho de uma rosa azul, toda poesia tem o poder de
+          ecoar eternamente — desde que cada palavra seja única, leve e verdadeira.
+        </p>
+        <p class="mission">
+          <strong>Sua missão:</strong> Purifique poesias removendo palavras repetidas e descubra quantas vezes cada
+          palavra ecoou no silêncio azul.
+        </p>
+      </div>
+
+      <!-- Input de Entrada -->
+      <div class="input-section">
+        <label for="poem-input">Digite seu poema:</label>
+        <textarea
+          id="poem-input"
+          placeholder='Exemplo: "Silêncio azul, silêncio tão profundo, azul eterno, silêncio azul"'
+          rows="4"
+        ></textarea>
+      </div>
+
+      <!-- Botões de Ação -->
+      <div class="buttons-section">
+        <button class="custom-btn btn-16" id="reveal-btn">
+          <span>REVELAR</span>
+        </button>
+        <button class="custom-btn btn-16" id="return-btn">
+          <span>RETORNAR</span>
+        </button>
+      </div>
+
+      <!-- Seção de Resultado -->
+      <div class="result-section" id="result-section">
+        <h2>✨ Resultado</h2>
+        <div class="result-content" id="result-content">
+          <!-- O resultado será inserido aqui via JavaScript -->
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

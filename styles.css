@@ -1,0 +1,482 @@
+/* Reset e Configurações Gerais */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  overflow-x: hidden;
+  background: #0a0a1a;
+  color: #ffffff;
+  min-height: 100vh;
+}
+
+/* Vídeo de Background */
+#bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+}
+
+/* Controles de Áudio */
+.audio-controls {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  display: flex;
+  gap: 10px;
+}
+
+.audio-btn {
+  background: rgba(15, 30, 60, 0.85);
+  border: 2px solid #4a90e2;
+  color: #ffffff;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 18px;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.audio-btn:hover {
+  background: rgba(74, 144, 226, 0.4);
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(74, 144, 226, 0.6);
+}
+
+.audio-btn:active {
+  transform: scale(0.95);
+}
+
+/* Container Principal */
+.main-container {
+  position: fixed;
+  right: 20%; /* 🔧 Aproxime ou afaste o container do rosto ajustando este valor
+                Exemplo: right: 12%; (mais à esquerda)
+                         right: 5%;  (mais à direita)
+                Tente variar entre 10% e 15% para encontrar o ponto ideal */
+  top: 50%;
+  transform: translateY(-50%);
+  width: 480px;
+  max-width: 90vw;
+  max-height: 90vh;
+  background: rgba(10, 20, 40, 0.75);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  padding: 35px;
+  box-shadow: 0 10px 50px rgba(0, 0, 0, 0.5), 0 0 30px rgba(74, 144, 226, 0.2), inset 0 1px 1px rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(74, 144, 226, 0.3);
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(74, 144, 226, 0.5) rgba(15, 30, 60, 0.3);
+}
+
+.main-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.main-container::-webkit-scrollbar-track {
+  background: rgba(15, 30, 60, 0.3);
+  border-radius: 10px;
+}
+
+.main-container::-webkit-scrollbar-thumb {
+  background: rgba(74, 144, 226, 0.5);
+  border-radius: 10px;
+}
+
+.main-container::-webkit-scrollbar-thumb:hover {
+  background: rgba(74, 144, 226, 0.7);
+}
+
+/* Descrição do Desafio */
+.challenge-description {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.challenge-description h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px;
+  font-weight: 600;
+  color: #b8d4f1;
+  margin-bottom: 15px;
+  text-shadow: 0 0 15px rgba(74, 144, 226, 0.5);
+}
+
+.challenge-description p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #d4e4f7;
+  margin-bottom: 10px;
+}
+
+.challenge-description .mission {
+  font-weight: 400;
+  color: #a8c8e8;
+  font-style: italic;
+}
+
+/* Seção de Input */
+.input-section {
+  margin-bottom: 25px;
+}
+
+.input-section label {
+  display: block;
+  font-size: 15px;
+  font-weight: 500;
+  color: #b8d4f1;
+  margin-bottom: 10px;
+  text-shadow: 0 0 10px rgba(74, 144, 226, 0.4);
+}
+
+#poem-input {
+  width: 100%;
+  padding: 15px;
+  background: rgba(15, 30, 60, 0.6);
+  border: 2px solid rgba(74, 144, 226, 0.4);
+  border-radius: 12px;
+  color: #ffffff;
+  font-family: 'Lato', sans-serif;
+  font-size: 14px;
+  resize: vertical;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+}
+
+#poem-input:focus {
+  outline: none;
+  border-color: #4a90e2;
+  box-shadow: 0 0 20px rgba(74, 144, 226, 0.4);
+  background: rgba(15, 30, 60, 0.75);
+}
+
+#poem-input::placeholder {
+  color: rgba(184, 212, 241, 0.5);
+}
+
+/* Seção de Botões */
+.buttons-section {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.custom-btn {
+  flex: 1;
+  height: 48px;
+  color: #b8d4f1;
+  border-radius: 12px;
+  padding: 12px 25px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 2px 2px 5px 0px rgba(74, 144, 226, 0.3), 7px 7px 20px 0px rgba(0, 0, 0, 0.3),
+    4px 4px 8px 0px rgba(0, 0, 0, 0.2);
+  outline: none;
+  border: 2px solid rgba(74, 144, 226, 0.3);
+}
+
+.btn-16::after {
+  position: absolute;
+  content: '';
+  width: 0;
+  height: 100%;
+  top: 0;
+  left: 0;
+  direction: rtl;
+  z-index: -1;
+  box-shadow: -7px -7px 20px 0px rgba(74, 144, 226, 0.2), -4px -4px 8px 0px rgba(74, 144, 226, 0.15),
+    7px 7px 20px 0px rgba(0, 0, 0, 0.3), 4px 4px 8px 0px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  border-radius: 12px;
+  background: rgba(74, 144, 226, 0.2);
+}
+
+.btn-16:hover {
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(74, 144, 226, 0.8);
+}
+
+.btn-16:hover::after {
+  left: auto;
+  right: 0;
+  width: 100%;
+}
+
+.btn-16:active {
+  transform: translateY(2px);
+}
+
+/* Seção de Resultado */
+.result-section {
+  margin-top: 30px;
+  padding-top: 25px;
+  border-top: 2px solid rgba(74, 144, 226, 0.3);
+  display: none;
+}
+
+.result-section.active {
+  display: block;
+  animation: fadeInResult 0.6s ease-in-out;
+}
+
+@keyframes fadeInResult {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.result-section h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 24px;
+  color: #b8d4f1;
+  margin-bottom: 20px;
+  text-align: center;
+  text-shadow: 0 0 15px rgba(74, 144, 226, 0.5);
+}
+
+.result-content {
+  background: rgba(15, 30, 60, 0.5);
+  border-radius: 12px;
+  padding: 20px;
+  max-height: 400px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(74, 144, 226, 0.5) rgba(15, 30, 60, 0.3);
+}
+
+.result-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.result-content::-webkit-scrollbar-track {
+  background: rgba(15, 30, 60, 0.3);
+  border-radius: 10px;
+}
+
+.result-content::-webkit-scrollbar-thumb {
+  background: rgba(74, 144, 226, 0.5);
+  border-radius: 10px;
+}
+
+.result-step {
+  margin-bottom: 20px;
+  padding: 15px;
+  background: rgba(74, 144, 226, 0.08);
+  border-left: 3px solid #4a90e2;
+  border-radius: 8px;
+  animation: slideInStep 0.5s ease-out forwards;
+  opacity: 0;
+}
+
+@keyframes slideInStep {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.result-step:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.result-step:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.result-step:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.result-step:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.result-step h3 {
+  font-size: 16px;
+  color: #4a90e2;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.result-step p {
+  font-size: 14px;
+  color: #d4e4f7;
+  line-height: 1.6;
+  margin-bottom: 8px;
+}
+
+.result-step code {
+  display: block;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 10px;
+  border-radius: 6px;
+  font-family: 'Courier New', monospace;
+  font-size: 13px;
+  color: #a8c8e8;
+  margin-top: 8px;
+  word-wrap: break-word;
+}
+
+.word-count-list {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 12px;
+  border-radius: 6px;
+  margin-top: 10px;
+}
+
+.word-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(74, 144, 226, 0.2);
+  color: #d4e4f7;
+  font-size: 13px;
+}
+
+.word-item:last-child {
+  border-bottom: none;
+}
+
+.word-item .word {
+  color: #a8c8e8;
+  font-weight: 500;
+}
+
+.word-item .count {
+  color: #4a90e2;
+  font-weight: 600;
+}
+
+.final-result {
+  background: linear-gradient(135deg, rgba(74, 144, 226, 0.2), rgba(15, 30, 60, 0.4));
+  border: 2px solid #4a90e2;
+  border-radius: 12px;
+  padding: 20px;
+  margin-top: 20px;
+  box-shadow: 0 0 25px rgba(74, 144, 226, 0.3);
+  animation: pulseGlow 2s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+  0%,
+  100% {
+    box-shadow: 0 0 25px rgba(74, 144, 226, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(74, 144, 226, 0.5);
+  }
+}
+
+.final-result h3 {
+  font-size: 18px;
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 15px;
+  text-shadow: 0 0 15px rgba(74, 144, 226, 0.7);
+}
+
+.final-result p {
+  font-size: 15px;
+  color: #b8d4f1;
+  line-height: 1.8;
+  text-align: center;
+  font-style: italic;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .main-container {
+    position: relative;
+    right: auto;
+    top: auto;
+    transform: none;
+    margin: 20px auto;
+    width: 95%;
+    max-width: 480px;
+    padding: 25px;
+  }
+
+  .audio-controls {
+    top: 10px;
+    right: 10px;
+  }
+
+  .challenge-description h1 {
+    font-size: 24px;
+  }
+
+  .challenge-description p {
+    font-size: 13px;
+  }
+
+  .buttons-section {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .custom-btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-container {
+    padding: 20px;
+  }
+
+  .challenge-description h1 {
+    font-size: 20px;
+  }
+
+  .challenge-description p {
+    font-size: 12px;
+  }
+
+  #poem-input {
+    font-size: 13px;
+  }
+
+  .custom-btn {
+    font-size: 13px;
+    height: 44px;
+  }
+
+  .result-step h3 {
+    font-size: 14px;
+  }
+
+  .result-step p,
+  .result-step code {
+    font-size: 12px;
+  }
+}
